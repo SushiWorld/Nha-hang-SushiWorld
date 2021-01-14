@@ -63,15 +63,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Tên món ăn</label>
-                                <input class="form-control" name="food_name" placeholder="Điền tên món ăn" value="{{$thucdon->food_name}}"/>
+                                <input class="form-control" name="food_name" placeholder="Tên món ăn..." value="{{$thucdon->food_name}}"/>
                             </div>
                             <div class="form-group">
                                 <label>Giá cả</label>
-                                <input class="form-control" name="food_price" placeholder="Giá cả" value="{{$thucdon->food_price}}"/>
+                                <input class="form-control" name="food_price" placeholder="Giá cả..." value="{{$thucdon->food_price}}"/>
                             </div>
                             <div class="form-group">
                                 <label>Mô tả món ăn</label>
-                                <input class="form-control" name="food_description" placeholder="Điền mô tả món ăn" value="{{$thucdon->food_description}}"/>
+                                <input class="form-control" name="food_description" placeholder="Mô tả..." value="{{$thucdon->food_description}}"/>
                             </div>
                             <div class="form-group">
                                 <label>Nối bật</label>
