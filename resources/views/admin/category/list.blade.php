@@ -26,8 +26,8 @@
                                 <th>ID</th>
                                 <th>Tên danh mục</th>
                                 <th>Mô tả danh mục</th>
-                                <th>Xóa</th>
-                                <th>Sửa</th>
+                                <th>Delete</th>
+                                <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>

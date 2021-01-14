@@ -8,8 +8,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Category
-                            <small>List</small>
+                        <h1 class="page-header">Slide
+                            <small>Danh sách</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -17,33 +17,22 @@
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
-                                <th>Hình ảnh</th>
-                                <th>Tên món ăn</th>
-                                <th>Id danh mục</th>
-                                <th>Giá cả</th>
-                                <th>Mô tả</th>
-                                <th>Nối bật</th>
-                                <th>Delete</th>
-                                <th>Edit</th>
+                                <th>Tên</th>
+                                <th>Nội dung</th>
+                                <th>Hình</th>
+                                <th>Xóa</th>
+                                <th>Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($thucdon as $td)
+                            @foreach ($slide as $sd)
                             <tr class="odd gradeX" align="center">
-                                <td>{{$td->id}}</td>
-                                <td><img src="upload/menu/{{$td->food_img}}"/></td>
-                                <td>{{$td->food_name}}</td>
-                                <td>{{$td->cate_id}}</td>
-                                <td>{{$td->food_price}}</td>
-                                <td>{{$td->food_description}}</td>
-                                <td>
-                                    @if($td->food_highlight == 0)
-                                    {{'Không'}}
-                                    @else
-                                    {{'Không'}}
-                                    @endif
-                                </td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/food/delete/{{$td->id}}"> Xóa</a></td>
+                                <td>{{$sd->id}}</td>
+                                <td><img src="upload/slide/{{$sd->slide_img}}"/></td>
+                                <td>{{$sd->title}}</td>
+                                <td>{{$sd->slide_content}}</td>
+                                <td>{{$sd->link}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/food/delete/{{$td->id}}">Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/food/edit/{{$td->id}}">Sửa</a></td>
                             </tr>
                             @endforeach

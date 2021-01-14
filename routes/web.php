@@ -10,9 +10,58 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\category;
+use App\Models\food;
+use App\Models\slide;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+ // Nhóm những trang nào liên quan điến admin
+Route::group(['prefix'=>'admin'],function(){
+	Route::group(['prefix'=>'category'],function(){
+		
+		Route::get('list','danhmucController@getDanhSach');
 
+		Route::get('edit/{id}','danhmucController@getSua');
+		Route::post('edit/{id}','danhmucController@postSua');
+
+
+		Route::get('add','danhmucController@getThem');
+		Route::post('add','danhmucController@postThem');
+
+		Route::get('delete/{id}','danhmucController@getXoa');
+	});
+
+	Route::group(['prefix'=>'food'],function(){
+		
+		Route::get('list','thucdonController@getDanhSach');
+
+		Route::get('edit/{id}','thucdonController@getSua');
+		Route::post('edit/{id}','thucdonController@postSua');
+
+
+		Route::get('add','thucdonController@getThem');
+		Route::post('add','thucdonController@postThem');
+
+		Route::get('delete/{id}','thucdonController@getXoa');
+	});
+
+	Route::group(['prefix'=>'slide'],function(){
+		
+		Route::get('list','slideController@getDanhSach');
+
+		Route::get('edit/{id}','slideController@getSua');
+		Route::post('edit/{id}','slideController@postSua');
+
+
+		Route::get('add','slideController@getThem');
+		Route::post('add','slideController@postThem');
+
+		Route::get('delete/{id}','slideController@getXoa');
+	});
+
+
+
+});

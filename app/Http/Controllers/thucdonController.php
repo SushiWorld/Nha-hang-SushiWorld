@@ -13,7 +13,7 @@ class thucdonController extends Controller
     public function getDanhSach()
     {
         $thucdon = food::orderBy('id','DESC')->get();
-        return view('admin.food.list',['thucdon'=>$thucdon]);
+    	return view('admin.food.list',['thucdon'=>$thucdon]);
     }
 
     public function getThem()
