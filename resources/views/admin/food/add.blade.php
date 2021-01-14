@@ -46,18 +46,18 @@
                             </div>
                             <div class="form-group">
                                 <label>Tên món ăn</label>
-                                <input class="form-control" name="food_name" placeholder="Tên món ăn..." />
+                                <input class="form-control" name="food_name" placeholder="Điền tên món ăn" />
                             </div>
                             <div class="form-group">
                                 <label>Giá cả</label>
-                                <input class="form-control" name="food_price" placeholder="Giá cả..." />
+                                <input class="form-control" name="food_price" placeholder="Giá cả" />
                             </div>
                             <div class="form-group">
                                 <label>Mô tả món ăn</label>
-                                <input class="form-control" name="food_description" placeholder="Mô tả..." />
+                                <input class="form-control" name="food_description" placeholder="Điền mô tả món ăn" />
                             </div>
                             <div class="form-group">
-                                <label>Nổi bật</label>
+                                <label>Nối bật</label>
                                 <label class="radio-inline">
                                     <input name="food_highlight" value="0" checked="" type="radio">Không
                                 </label>
@@ -65,7 +65,7 @@
                                     <input name="food_highlight" value="1" type="radio">Có
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm</button>
+                            <button type="submit" class="btn btn-default">Thêm món ăn</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>

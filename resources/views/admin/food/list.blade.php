@@ -23,8 +23,8 @@
                                 <th>Giá cả</th>
                                 <th>Mô tả</th>
                                 <th>Nối bật</th>
-                                <th>Xóa</th>
-                                <th>Sửa</th>
+                                <th>Delete</th>
+                                <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>

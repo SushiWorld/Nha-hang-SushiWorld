@@ -13,7 +13,7 @@ class thucdonController extends Controller
     public function getDanhSach()
     {
         $thucdon = food::orderBy('id','DESC')->get();
-    	return view('admin.food.list',['thucdon'=>$thucdon]);
+        return view('admin.food.list',['thucdon'=>$thucdon]);
     }
 
     public function getThem()
@@ -92,7 +92,7 @@ class thucdonController extends Controller
         $thucdon = food::find($id);
         $this->validate($request,
             [
-                'food_name' => 'required|unique:food,food_name|min:1|max:100',
+                'food_name' => 'required|min:1|max:100',
                 'food_price' => 'required',
                 'food_description' => 'required',
                 'DanhMuc' => 'required',
@@ -101,7 +101,6 @@ class thucdonController extends Controller
 
             [
                 'food_name.required'=>'Bạn chưa nhập tên món ăn',
-                'food_name.unique'=>'Tên món ăn đã tồn tại',
                 'food_name.min'=>'Tên món ăn phải có độ dài từ 3-100 kí tự',                
                 'food_name.max'=>'Tên món ăn phải có độ dài từ 3-100 kí tự',
 
