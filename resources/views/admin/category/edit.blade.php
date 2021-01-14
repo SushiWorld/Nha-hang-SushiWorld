@@ -35,12 +35,12 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <div class="form-group">
                                 <label>Tên danh mục</label>
-                                <input class="form-control" name="food_category" placeholder="Nhập tên danh mục" value="{{$danhmuc->food_category}}" />
+                                <input class="form-control" name="food_category" placeholder="Tên danh mục..." value="{{$danhmuc->food_category}}" />
                             </div>
                             
                             <div class="form-group">
                                 <label>Mô tả danh mục</label>
-                                <input class="form-control" name="cate_des" placeholder="Nhập mô tả" value="{{$danhmuc->cate_des}}"></textarea>
+                                <input class="form-control" name="cate_des" placeholder="Mô tả..." value="{{$danhmuc->cate_des}}"></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-default">Sửa</button>
