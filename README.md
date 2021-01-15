@@ -6,7 +6,9 @@ Xây dựng một website với các chức năng đáp ứng nhu cầu thông t
 Phân công công việc:
 
 Nguyễn Thành Đạt - Controllers.
+
 Trần Anh Đức - Views.
+
 Lê Hoàng Bảo Thiên - Models.
 
 -	Phần giao diện (nhóm chức năng thông tin):
