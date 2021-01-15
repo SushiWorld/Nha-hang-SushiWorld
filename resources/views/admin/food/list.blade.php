@@ -40,7 +40,7 @@
                                     @if($td->food_highlight == 0)
                                     {{'Không'}}
                                     @else
-                                    {{'Không'}}
+                                    {{'Có'}}
                                     @endif
                                 </td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/food/delete/{{$td->id}}"> Xóa</a></td>
