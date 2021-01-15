@@ -59,10 +59,20 @@
                             <div class="form-group">
                                 <label>Nối bật</label>
                                 <label class="radio-inline">
-                                    <input name="food_highlight" value="0" checked="" type="radio">Không
+                                    <input name="food_highlight" value="0" 
+                                        @if($thucdon->food_highlight == 0)
+                                            {{"checked"}}
+                                        @endif
+
+                                        type="radio">Không
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="food_highlight" value="1" type="radio">Có
+                                    <input name="food_highlight" value="1" 
+                                        @if($thucdon->food_highlight == 1)
+                                            {{"checked"}}
+                                        @endif
+
+                                    type="radio">Có
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-default">Thêm món ăn</button>
