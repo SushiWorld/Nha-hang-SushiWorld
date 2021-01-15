@@ -17,7 +17,7 @@ class slideController extends Controller
 
     public function getThem()
     {
-        
+        return view('admin.slide.add');
     }
 
     public function postThem(Request $request)
@@ -37,6 +37,9 @@ class slideController extends Controller
 
     public function getXoa($id)
     {
-        
+        $slide = slide::find($id);
+        $slide->delete();
+
+        return redirect('admin/slide/list')->with('thongbao','Xóa thành công');
     }
 }
