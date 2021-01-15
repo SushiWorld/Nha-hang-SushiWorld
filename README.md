@@ -1,4 +1,13 @@
 # Nha-hang-SushiWorld
+Xây dựng Website Giới thiệu Nhà hàng Sushi World
+
+Xây dựng một website với các chức năng đáp ứng nhu cầu thông tin, quản trị và kinh doanh trực tuyến của nhà hàng. Đảm bảo giới thiệu, cập nhập đầy đủ thông tin của nhà hàng tới khách hàng, tiếp nhận thông tin phản hồi từ khách hàng một cách nhanh chóng; tiện lợi dễ dàng trong việc đặt hàng trực tuyến.
+
+Phân công công việc:
+
+Nguyễn Thành Đạt - Controllers.
+Trần Anh Đức - Views.
+Lê Hoàng Bảo Thiên - Models.
 
 -	Phần giao diện (nhóm chức năng thông tin):
     +	Giới thiệu nhà hàng, tin tức, sự kiện ẩm thực
