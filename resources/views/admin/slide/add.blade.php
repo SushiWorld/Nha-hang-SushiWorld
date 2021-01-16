@@ -43,6 +43,10 @@
                             <label>Nội dung</label>
                             <input class="form-control" name="slide_content" placeholder="Nội dung..." />
                         </div>
+                        <div class="form-group">
+                            <label>Link</label>
+                            <input class="form-control" name="link" placeholder="Link..." />
+                        </div>
                         
                         <button type="submit" class="btn btn-default">Thêm món ăn</button>
                         <button type="reset" class="btn btn-default">Làm mới</button>

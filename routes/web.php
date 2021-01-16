@@ -13,6 +13,8 @@
 use App\Models\category;
 use App\Models\food;
 use App\Models\slide;
+use App\Models\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,6 +62,20 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('add','slideController@postThem');
 
 		Route::get('delete/{id}','slideController@getXoa');
+	});
+
+	Route::group(['prefix'=>'user'],function(){
+		
+		Route::get('list','userController@getDanhSach');
+
+		Route::get('edit/{id}','userController@getSua');
+		Route::post('edit/{id}','userController@postSua');
+
+
+		Route::get('add','userController@getThem');
+		Route::post('add','userController@postThem');
+
+		Route::get('delete/{id}','userController@getXoa');
 	});
 
 

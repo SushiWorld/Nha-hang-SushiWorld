@@ -76,7 +76,7 @@ class thucdonController extends Controller
 
         $thucdon->save();
 
-        return redirect('admin/food/add')->with('loi','Vui lòng chọn ảnh có định dạng .jpg,.png,.jpeg');
+        return redirect('admin/food/add')->with('thongbao','Thêm thành công');
     }
 
     public function getSua($id)

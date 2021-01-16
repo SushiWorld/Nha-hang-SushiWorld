@@ -37,7 +37,7 @@
 
                             <div class="form-group">
                                 <label>Danh mục</label>
-                                <select class="form-group" name="DanhMuc" id="DanhMuc">
+                                <select class="form-control" name="DanhMuc" id="DanhMuc">
                                     @foreach ($danhmuc as $dm)
                                         <option 
 
@@ -47,7 +47,7 @@
 
                                         @endif
 
-                                        value="{{$dm->id}}">
+                                        value="{{$dm->id}}"
 
                                             {{$dm->food_category}}
 

@@ -13,6 +13,12 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
+
+                    @if (session('thongbao'))
+                        <div class="alert alert-success">
+                            {{session('thongbao')}}
+                        </div>
+                    @endif
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
@@ -31,7 +37,7 @@
                             @foreach ($thucdon as $td)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$td->id}}</td>
-                                <td><img src="upload/menu/{{$td->food_img}}"/></td>
+                                <td><img width="80px" src="upload/menu/{{$td->food_img}}"/></td>
                                 <td>{{$td->food_name}}</td>
                                 <td>{{$td->cate_id}}</td>
                                 <td>{{$td->food_price}}</td>

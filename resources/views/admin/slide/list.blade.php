@@ -27,6 +27,7 @@
                                 <th>Hình</th>
                                 <th>Tên</th>
                                 <th>Nội dung</th>
+                                <th>Link</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -35,11 +36,12 @@
                             @foreach ($slide as $sd)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$sd->id}}</td>
-                                <td><img width="200px" src="upload/slide/{{$sd->slide_img}}"/></td>
+                                <td><img width="80px" src="upload/slide/{{$sd->slide_img}}"/></td>
                                 <td>{{$sd->title}}</td>
                                 <td>{{$sd->slide_content}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/category/delete/{{$sd->id}}"> Xóa</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/category/edit/{{$sd->id}}">Sửa</a></td>
+                                <td>{{$sd->link}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/slide/delete/{{$sd->id}}"> Xóa</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/slide/edit/{{$sd->id}}">Sửa</a></td>
                             </tr>
                             @endforeach
                         </tbody>
