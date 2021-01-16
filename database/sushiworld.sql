@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 15, 2021 lúc 01:59 AM
+-- Thời gian đã tạo: Th1 16, 2021 lúc 06:31 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -20,56 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `sushiworld`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `updated_at` date NOT NULL,
-  `created_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Đang đổ dữ liệu cho bảng `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `password`, `updated_at`, `created_at`) VALUES
-(1, 'murja', '202cb962ac59075b964b07152d234b70', '0000-00-00', '0000-00-00'),
-(2, 'thien', 'e10adc3949ba59abbe56e057f20f883e', '0000-00-00', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `basket`
---
-
-CREATE TABLE `basket` (
-  `id` int(11) NOT NULL,
-  `customer_name` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `total` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL,
-  `date_made` varchar(255) NOT NULL,
-  `updated_at` int(11) NOT NULL,
-  `created_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Đang đổ dữ liệu cho bảng `basket`
---
-
-INSERT INTO `basket` (`id`, `customer_name`, `contact_number`, `address`, `email`, `total`, `status`, `date_made`, `updated_at`, `created_at`) VALUES
-(13, 'Wada', '08065463632', 'Wadagailcom', 'gg@gmail.com', '700', 'pending', '2016-12-31 15:50:21', 0, 0),
-(14, 'thien', '123456789', '123', '123@gmail.com', '50', 'pending', '2021-01-10 13:12:49', 0, 0),
-(15, 'Mi', '84971097399', 'abc', 'abc@gmail.com', '50', 'pending', '2021-01-12 13:43:23', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -104,10 +54,10 @@ INSERT INTO `category` (`id`, `food_category`, `cate_des`, `updated_at`, `create
 
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
-  `customer_name` varchar(255) NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `message` text NOT NULL
+  `customer_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -152,51 +102,50 @@ INSERT INTO `food` (`id`, `food_name`, `food_price`, `food_description`, `cate_i
 (9, 'Gunkan', '70K', 'Gunkan Sushi như một chiếc tàu nhỏ đầy các món cá, trứng cá, trứng tôm, nhím biển..', 2, 'menu-item-thumbnail-09.jpg', '', '0000-00-00', '0000-00-00'),
 (10, 'Temari', '60K', 'Temari Shushi tròn như quả bóng nhiều loại topping khác nhau tùy theo lựa chọn.                       ', 2, 'menu-item-thumbnail-10.jpg', '', '0000-00-00', '0000-00-00'),
 (11, 'Temaki', '70K', 'Temaki có hình chiếc phễu, bên trong cuộn cơm và cá hồi, trứng cá hồi, rau củ...', 2, 'menu-item-thumbnail-11.jpg', '', '0000-00-00', '0000-00-00'),
-(12, 'Nigiri', '70K', 'Nigiri Sushi viên nhỏ dài, được phết lên một lớp wasabi và phủ lớp hải sản tươi.', 2, '', '', '0000-00-00', '0000-00-00'),
-(13, 'Uramaki', '50K', 'Uramaki Sushi là phiên bản \"đảo ngược\" của Maki Sushi.', 2, '', '', '0000-00-00', '0000-00-00'),
-(14, 'Oshizushi', '95K', 'Oshizushi Sushi là loại cao cấp, sang trọng. Cơm lót ở dưới - Lớp hải sản phủ ở trên.', 2, '', '', '0000-00-00', '0000-00-00'),
-(15, 'Chirashi', '120K', 'Chirashi Sushi gồm cơm ở dưới, phần trên phủ kín các loại hải sản, rau củ kèm sốt Miso.', 2, '', '', '0000-00-00', '0000-00-00'),
-(16, 'Narezushi', '110K', 'Narezushi được chế biến bằng cách ủ muối và gạo với cá sống làm cho lên men.', 2, '', '', '0000-00-00', '0000-00-00'),
-(17, 'BUFFET GRILLED SUSHI', '200K', 'Buffet Sushi nướng - độc quyền Sushi World.', 2, '', '', '0000-00-00', '0000-00-00'),
-(18, 'Hot pot sushi', '200K', 'Buffet Sushi lẩu - độc quyền Sushi World.', 2, '', '', '0000-00-00', '0000-00-00'),
-(19, 'Chocolate Fudgecake', '45K', 'Dĩa bánh Fudge hương vị Chocolate và dâu tây đỏ ngọt ngào.', 3, '', '', '0000-00-00', '0000-00-00'),
-(20, 'Vanilla Fudgecake', '45K', 'Dĩa bánh Fudge hương vị Vanilla và dâu tây đỏ ngọt ngào.', 3, '', '', '0000-00-00', '0000-00-00'),
-(21, 'Caramel Fudgecake', '45K', '', 3, '', '', '0000-00-00', '0000-00-00'),
-(22, 'Swirl Ice Cream Fudgecake', '50K', 'Dĩa bánh Fudge hương vị bánh Vanilla Chocolate và kem béo.', 3, '', '', '0000-00-00', '0000-00-00'),
-(23, 'Milk Flan Cake', '30K', 'Dĩa bánh Flan làm từ sữa bò nguyên chất và phủ kem béo, dâu tây - cherry.', 3, '', '', '0000-00-00', '0000-00-00'),
-(24, 'Caramel Flan Cake', '30K', 'Dĩa bánh Flan làm từ sữa caramel truyền thống và phủ kem béo, dâu tây - cherry.', 3, '', '', '0000-00-00', '0000-00-00'),
-(25, 'Aportel Beer', '40K', 'Bia tuơi nhập khẩu từ Đức', 4, '', '', '0000-00-00', '0000-00-00'),
-(26, 'Strong Bow', '25K', 'Strong Bow nước trái cây lên men đủ tất cả các vị - tự chọn.', 4, '', '', '0000-00-00', '0000-00-00'),
-(27, 'Monster Energy', '30K', 'Monster Energy nước tăng lực nổi tiếng của Mỹ, vị truyền thống.', 4, '', '', '0000-00-00', '0000-00-00'),
-(28, 'Coca Cola', '20K', 'Coca cola nước ngọt có ga quen thuộc.', 4, '', '', '0000-00-00', '0000-00-00'),
-(29, 'Pepsi Lemon No Calo', '20K', 'Pepsi vị chanh không calo - phù hợp cho người ăn kiêng.', 4, '', '', '0000-00-00', '0000-00-00'),
-(30, 'Red Bull Energy', '20K', 'Bò húc Red Bull nước tăng lực truyền thống.', 4, '', '', '0000-00-00', '0000-00-00'),
-(31, '7 Up', '20K', '7 Up loại nước khoáng có ga truyền thống.', 4, '', '', '0000-00-00', '0000-00-00'),
-(32, 'Aquafina', '10K', 'Aquafina nước khoáng lọc thiên nhiên.', 4, '', '', '0000-00-00', '0000-00-00');
+(12, 'Nigiri', '70K', 'Nigiri Sushi viên nhỏ dài, được phết lên một lớp wasabi và phủ lớp hải sản tươi.', 2, 'menu-item-thumbnail-12.jpg', '', '0000-00-00', '0000-00-00'),
+(13, 'Uramaki', '50K', 'Uramaki Sushi là phiên bản \"đảo ngược\" của Maki Sushi.', 2, 'menu-item-thumbnail-13.jpg', '', '0000-00-00', '0000-00-00'),
+(14, 'Oshizushi', '95K', 'Oshizushi Sushi là loại cao cấp, sang trọng. Cơm lót ở dưới - Lớp hải sản phủ ở trên.', 2, 'menu-item-thumbnail-14.jpg', '', '0000-00-00', '0000-00-00'),
+(15, 'Chirashi', '120K', 'Chirashi Sushi gồm cơm ở dưới, phần trên phủ kín các loại hải sản, rau củ kèm sốt Miso.', 2, 'menu-item-thumbnail-15.jpg', '', '0000-00-00', '0000-00-00'),
+(16, 'Narezushi', '110K', 'Narezushi được chế biến bằng cách ủ muối và gạo với cá sống làm cho lên men.', 2, 'menu-item-thumbnail-16.1.jpg', '', '0000-00-00', '0000-00-00'),
+(17, 'BUFFET GRILLED SUSHI', '200K', 'Buffet Sushi nướng - độc quyền Sushi World.', 2, 'menu-item-thumbnail-16.2.jpg', '', '0000-00-00', '0000-00-00'),
+(18, 'Hot pot sushi', '200K', 'Buffet Sushi lẩu - độc quyền Sushi World.', 2, 'menu-item-thumbnail-16.jpg', '', '0000-00-00', '0000-00-00'),
+(19, 'Chocolate Fudgecake', '45K', 'Dĩa bánh Fudge hương vị Chocolate và dâu tây đỏ ngọt ngào.', 3, 'menu-item-thumbnail-17.jpg', '', '0000-00-00', '0000-00-00'),
+(20, 'Vanilla Fudgecake', '45K', 'Dĩa bánh Fudge hương vị Vanilla và dâu tây đỏ ngọt ngào.', 3, 'menu-item-thumbnail-18.jpg', '', '0000-00-00', '0000-00-00'),
+(21, 'Caramel Fudgecake', '45K', '', 3, 'menu-item-thumbnail-19.jpg', '', '0000-00-00', '0000-00-00'),
+(22, 'Swirl Ice Cream Fudgecake', '50K', 'Dĩa bánh Fudge hương vị bánh Vanilla Chocolate và kem béo.', 3, 'menu-item-thumbnail-20.jpg', '', '0000-00-00', '0000-00-00'),
+(23, 'Milk Flan Cake', '30K', 'Dĩa bánh Flan làm từ sữa bò nguyên chất và phủ kem béo, dâu tây - cherry.', 3, 'menu-item-thumbnail-21.jpg', '', '0000-00-00', '0000-00-00'),
+(24, 'Caramel Flan Cake', '30K', 'Dĩa bánh Flan làm từ sữa caramel truyền thống và phủ kem béo, dâu tây - cherry.', 3, 'menu-item-thumbnail-22.jpg', '', '0000-00-00', '0000-00-00'),
+(25, 'Aportel Beer', '40K', 'Bia tuơi nhập khẩu từ Đức', 4, 'menu-item-thumbnail-23.jpg', '', '0000-00-00', '0000-00-00'),
+(26, 'Strong Bow', '25K', 'Strong Bow nước trái cây lên men đủ tất cả các vị - tự chọn.', 4, 'menu-item-thumbnail-24.jpg', '', '0000-00-00', '0000-00-00'),
+(27, 'Monster Energy', '30K', 'Monster Energy nước tăng lực nổi tiếng của Mỹ, vị truyền thống.', 4, 'menu-item-thumbnail-25.jpg', '', '0000-00-00', '0000-00-00'),
+(28, 'Coca Cola', '20K', 'Coca cola nước ngọt có ga quen thuộc.', 4, 'menu-item-thumbnail-26.jpg', '', '0000-00-00', '0000-00-00'),
+(29, 'Pepsi Lemon No Calo', '20K', 'Pepsi vị chanh không calo - phù hợp cho người ăn kiêng.', 4, 'menu-item-thumbnail-27.jpg', '', '0000-00-00', '0000-00-00'),
+(30, 'Red Bull Energy', '20K', 'Bò húc Red Bull nước tăng lực truyền thống.', 4, 'menu-item-thumbnail-28.jpg', '', '0000-00-00', '0000-00-00'),
+(31, '7 Up', '20K', '7 Up loại nước khoáng có ga truyền thống.', 4, 'menu-item-thumbnail-29.jpg', '', '0000-00-00', '0000-00-00'),
+(32, 'Aquafina', '10K', 'Aquafina nước khoáng lọc thiên nhiên.', 4, 'menu-item-thumbnail-30.jpp', '', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `items`
+-- Cấu trúc bảng cho bảng `kinds`
 --
 
-CREATE TABLE `items` (
-  `item_id` int(11) NOT NULL,
-  `order_id` varchar(100) NOT NULL,
-  `food` varchar(100) NOT NULL,
-  `qty` varchar(100) NOT NULL,
+CREATE TABLE `kinds` (
+  `id` int(11) NOT NULL,
+  `kind_item` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `kind_des` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `items`
+-- Đang đổ dữ liệu cho bảng `kinds`
 --
 
-INSERT INTO `items` (`item_id`, `order_id`, `food`, `qty`, `updated_at`, `created_at`) VALUES
-(1, '13', 'pizza', '2', '0000-00-00', '0000-00-00'),
-(2, '14', 'snailchoc', '1', '0000-00-00', '0000-00-00'),
-(3, '15', 'spicyburger', '1', '0000-00-00', '0000-00-00');
+INSERT INTO `kinds` (`id`, `kind_item`, `kind_des`, `updated_at`, `created_at`) VALUES
+(1, 'Thường', 'Loại bàn 2 ghế', '0000-00-00', '0000-00-00'),
+(2, 'Vừa', 'Loại bàn 4 ghế', '0000-00-00', '0000-00-00'),
+(3, 'Lớn', 'Loại bàn 10 ghế', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -205,24 +154,28 @@ INSERT INTO `items` (`item_id`, `order_id`, `food`, `qty`, `updated_at`, `create
 --
 
 CREATE TABLE `reservation` (
-  `reserve_id` int(11) NOT NULL,
-  `no_of_guest` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `phone` varchar(100) NOT NULL,
-  `date_res` varchar(100) NOT NULL,
-  `time` varchar(100) NOT NULL,
-  `suggestions` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `no_of_guest` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `date_res` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `time` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `occasion` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `kind` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `reservation`
 --
 
-INSERT INTO `reservation` (`reserve_id`, `no_of_guest`, `email`, `phone`, `date_res`, `time`, `suggestions`, `updated_at`, `created_at`) VALUES
-(1, '2', 'abdulflezy13@yahoo.com', '09087676543', '2016-12-14', '15:00', 'suggestions suggestions suggestions', '0000-00-00', '0000-00-00'),
-(2, '2', 'abdulflezy13@ymail.com', '09087676546', '2016-12-30', '18:00', 'suggestions suggestions suggestions', '0000-00-00', '0000-00-00');
+INSERT INTO `reservation` (`id`, `name`, `email`, `phone`, `no_of_guest`, `date_res`, `time`, `occasion`, `kind`, `note`, `status`, `updated_at`, `created_at`) VALUES
+(1, 'Thành Đạt', 'thanhdat@gmail.com', '0123456789', '2', '17/01/2021', '12:16', 'Thường', 3, 'Đặt trước bánh ngọt', 0, '0000-00-00', '0000-00-00'),
+(2, 'Anh Đức', 'anhduc@gmail.com', '0123456789', '2', '17/01/2021', '12:16', 'Thường', 1, 'Đặt trước bánh ngọt', 1, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -245,23 +198,40 @@ CREATE TABLE `slide` (
 --
 
 INSERT INTO `slide` (`id`, `title`, `slide_img`, `slide_content`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'Temaki', 'special-menu-5.jpg', 'Temaki có hình chiếc phễu, chỉ được cuộn nhẹ ở phần cuối, bên trong chứa cơm và phủ các loại topping khác nhau như cá hồi, trứng cá hồi, rau củ...', '', NULL, NULL);
+(1, 'MAKI', 'special-menu-1.jpg', 'Maki là dạng cơm cuộn bằng rong biển loại nhỏ, thường chỉ có 1 loại nhân, có thể là nhân cá sống, rau củ quả sống.', '', NULL, NULL),
+(2, 'FUTOMAKI', 'special-menu-2.jpg', 'Futomaki có đường kính từ 1.5 inch đến 2.5 inch, bao gồm 2 - 3 loại nhân khác nhau được cuộn bằng rong biển khô.', '', NULL, NULL),
+(3, 'GUNKAN', 'special-menu-3.jpg', 'Gunkan trông giống như một chiếc tàu nhỏ \"chở\" đầy các món cá, trứng cá, trứng tôm hay nhím biển.', '', NULL, NULL),
+(5, 'TEMARI', 'special-menu-4.jpg', 'Temari có dạng tròn như những quả bóng nhỏ, được phủ lên bởi nhiều loại topping khác nhau tuỳ theo lựa chọn.', '', NULL, NULL),
+(6, 'TEMAKI', 'special-menu-5.jpg', 'Temaki có hình chiếc phễu, chỉ được cuộn nhẹ ở phần cuối, bên trong chứa cơm và phủ các loại topping khác nhau như cá hồi, trứng cá hồi, rau củ...', '', NULL, NULL),
+(7, 'NIGIRI', 'special-menu-6.jpg', 'Nigiri là các viên sushi nhỏ dài, khá thuôn thả, được phết lên một lớp wasabi rồi phủ lên trên một lớp cá sống hoặc các loại hải sản khác.', '', NULL, NULL),
+(9, 'Set Special', 'special-menu-7.jpg', 'Set thịt nướng đặc biệt, các loại hải sản tươi sống cùng với sushi tuyệt hảo.', '', '2021-01-16 08:00:53', '2021-01-16 08:00:53'),
+(10, 'Set nướng', 'special-menu-7.jpg', 'Set thịt nướng đặc biệt, các loại hải sản tươi sống cùng với sushi tuyệt hảo.', '', '2021-01-16 08:16:28', '2021-01-16 08:16:28');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `updated_at`, `created_at`) VALUES
+(2, 'Bảo Thiên', 'baothien@gmail.com', '$2y$10$Ux.W2wFa2nwin471r0z3wOrQrVGdwJaEK5dxIrsMZmUENfxqA3nua', '2021-01-16', '0000-00-00');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `basket`
---
-ALTER TABLE `basket`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `category`
@@ -280,19 +250,20 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `food`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_category_food` (`cate_id`);
+  ADD KEY `FK_category_id` (`cate_id`);
 
 --
--- Chỉ mục cho bảng `items`
+-- Chỉ mục cho bảng `kinds`
 --
-ALTER TABLE `items`
-  ADD PRIMARY KEY (`item_id`);
+ALTER TABLE `kinds`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`reserve_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_kind_res` (`kind`);
 
 --
 -- Chỉ mục cho bảng `slide`
@@ -301,20 +272,14 @@ ALTER TABLE `slide`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
-
---
--- AUTO_INCREMENT cho bảng `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT cho bảng `basket`
---
-ALTER TABLE `basket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -335,22 +300,28 @@ ALTER TABLE `food`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT cho bảng `items`
+-- AUTO_INCREMENT cho bảng `kinds`
 --
-ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `kinds`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reserve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT cho bảng `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -360,7 +331,13 @@ ALTER TABLE `slide`
 -- Các ràng buộc cho bảng `food`
 --
 ALTER TABLE `food`
-  ADD CONSTRAINT `FK_category_food` FOREIGN KEY (`cate_id`) REFERENCES `category` (`id`);
+  ADD CONSTRAINT `FK_category_id` FOREIGN KEY (`cate_id`) REFERENCES `food` (`id`);
+
+--
+-- Các ràng buộc cho bảng `reservation`
+--
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `FK_kind_res` FOREIGN KEY (`kind`) REFERENCES `kinds` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

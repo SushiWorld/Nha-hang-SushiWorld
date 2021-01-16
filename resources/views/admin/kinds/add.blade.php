@@ -1,20 +1,20 @@
+
     @extends('admin.layout.index')
 
     @section('content')
-
 
 <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Slide
-                            <small>{{$slide->title}}</small>
+                        <h1 class="page-header">Loại bàn
+                            <small>Thêm</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-
+                        
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
                                 @foreach ($errors->all() as $err)
@@ -30,36 +30,26 @@
                         @endif
  
 
-                        <form action="admin/slide/edit/{{$slide->id}}" method="POST" enctype="multipart/form-data">
-                            
+                        <form action="admin/category/add" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                            
                             <div class="form-group">
-                                <label>Hình</label>
-                                <p><img width="200px" src="upload/slide/{{$slide->slide_img}}"></p>
-                                <input type="file" class="form-control" name="slide_img"/>
+                                <label>Tên loại bàn</label>
+                                <input class="form-control" name="kind_item" placeholder="Nhập tên danh mục" />
                             </div>
                             <div class="form-group">
-                                <label>Tên</label>
-                                <input class="form-control" name="title" placeholder="Tên slide..." value="{{$slide->title}}"/>
+                                <label>Mô tả</label>
+                                <input class="form-control" name="kind_des" placeholder="Nhập mô tả" ></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Nội dung</label>
-                                <input class="form-control" name="slide_content" placeholder="Nội dung..." value="{{$slide->slide_content}}"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Link</label>
-                                <input class="form-control" name="link" placeholder="Link..." value="{{$slide->link}}"/>
-                            </div>
-                            <button type="submit" class="btn btn-default">Sửa</button>
+                            <button type="submit" class="btn btn-default">Thêm</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
-                        <form>
+                        </form>
                     </div>
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
         </div>
-        <!-- /#page-wrapper -->
+<!-- end -->
+
 
     @endsection

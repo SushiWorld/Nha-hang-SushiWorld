@@ -4,7 +4,17 @@
                         <li>
                             <a href="#"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
                         </li>
-                        
+                        <li>
+                            <a href="admin/reservation/list"><i class="fa fa-bar-chart-o fa-fw"></i> Đơn đặt bàn<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/reservation/list"> Danh sách</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
                         <li>
                             <a href="admin/category/list"><i class="fa fa-bar-chart-o fa-fw"></i> Danh mục<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -29,7 +39,18 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-
+                        <li>
+                            <a href="admin/kinds/list"><i class="fa fa-bar-chart-o fa-fw"></i> Loại bàn<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/kinds/list"> Danh sách</a>
+                                </li>
+                                <li>
+                                    <a href="admin/kinds/add"> Thêm</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                         <li>
                             <a href="admin/slide/list"><i class="fa fa-bar-chart-o fa-fw"></i> Slide<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -44,7 +65,7 @@
                         </li>
 
                         <li>
-                            <a href="admin/user/list"><i class="fa fa-bar-chart-o fa-fw"></i> User<span class="fa arrow"></span></a>
+                            <a href="admin/user/list"><i class="fa fa-bar-chart-o fa-fw"></i> Tài khoản<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/user/list"> Danh sách</a>

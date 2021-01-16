@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Danh mục
+                        <h1 class="page-header">Loại bàn
                             <small>Danh sách</small>
                         </h1>
                     </div>
@@ -24,20 +24,20 @@
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
-                                <th>Tên danh mục</th>
-                                <th>Mô tả danh mục</th>
+                                <th>Tên loại bàn</th>
+                                <th>Mô tả </th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($danhmuc as $dm)
+                            @foreach ($loaiban as $lb)
                             <tr class="odd gradeX" align="center">
-                                <td>{{$dm->id}}</td>
-                                <td>{{$dm->food_category}}</td>
-                                <td>{{$dm->cate_des}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/category/delete/{{$dm->id}}"> Xóa</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/category/edit/{{$dm->id}}">Sửa</a></td>
+                                <td>{{$lb->id}}</td>
+                                <td>{{$lb->kind_item}}</td>
+                                <td>{{$lb->kind_des}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/kinds/delete/{{$lb->id}}"> Xóa</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/kinds/edit/{{$lb->id}}">Sửa</a></td>
                             </tr>
                             @endforeach
                         </tbody>

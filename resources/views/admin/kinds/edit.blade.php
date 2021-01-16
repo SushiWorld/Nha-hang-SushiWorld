@@ -1,3 +1,4 @@
+
     @extends('admin.layout.index')
 
     @section('content')
@@ -8,8 +9,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Slide
-                            <small>{{$slide->title}}</small>
+                        <h1 class="page-header">Loại bàn
+                            <small>{{$loaiban->kind_item}}</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -28,32 +29,23 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif
- 
 
-                        <form action="admin/slide/edit/{{$slide->id}}" method="POST" enctype="multipart/form-data">
-                            
+                        
+                        <form action="admin/kinds/edit/{{$loaiban->id}}" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                            <div class="form-group">
+                                <label>Tên danh mục</label>
+                                <input class="form-control" name="kind_item" placeholder="Nhập tên danh mục" value="{{$loaiban->kind_item}}" />
+                            </div>
                             
                             <div class="form-group">
-                                <label>Hình</label>
-                                <p><img width="200px" src="upload/slide/{{$slide->slide_img}}"></p>
-                                <input type="file" class="form-control" name="slide_img"/>
+                                <label>Mô tả danh mục</label>
+                                <input class="form-control" name="kind_des" placeholder="Nhập mô tả" value="{{$loaiban->kind_des}}"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Tên</label>
-                                <input class="form-control" name="title" placeholder="Tên slide..." value="{{$slide->title}}"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Nội dung</label>
-                                <input class="form-control" name="slide_content" placeholder="Nội dung..." value="{{$slide->slide_content}}"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Link</label>
-                                <input class="form-control" name="link" placeholder="Link..." value="{{$slide->link}}"/>
-                            </div>
+                            
                             <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
-                        <form>
+                        </form>
                     </div>
                 </div>
                 <!-- /.row -->

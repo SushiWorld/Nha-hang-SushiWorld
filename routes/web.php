@@ -14,6 +14,8 @@ use App\Models\category;
 use App\Models\food;
 use App\Models\slide;
 use App\Models\User;
+use App\Models\reservation;
+use App\Models\kinds;
 
 
 Route::get('/', function () {
@@ -76,6 +78,30 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('add','userController@postThem');
 
 		Route::get('delete/{id}','userController@getXoa');
+	});
+
+	Route::group(['prefix'=>'reservation'],function(){
+		
+		Route::get('list','reservationController@getDanhSach');
+
+		Route::get('detail/{id}','reservationController@getSua');
+		Route::post('detail/{id}','reservationController@postSua');
+
+		Route::get('delete/{id}','reservationController@getXoa');
+	});
+
+	Route::group(['prefix'=>'kinds'],function(){
+		
+		Route::get('list','loaibanController@getDanhSach');
+
+		Route::get('edit/{id}','loaibanController@getSua');
+		Route::post('edit/{id}','loaibanController@postSua');
+
+
+		Route::get('add','loaibanController@getThem');
+		Route::post('add','loaibanController@postThem');
+
+		Route::get('delete/{id}','loaibanController@getXoa');
 	});
 
 

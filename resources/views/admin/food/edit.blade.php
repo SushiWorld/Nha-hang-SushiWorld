@@ -93,7 +93,7 @@
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-default" >Sửa</button>
-                            <button type="reset" name="cate_des" class="btn btn-default">Làm mới</button>
+                            <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>
                 </div>
