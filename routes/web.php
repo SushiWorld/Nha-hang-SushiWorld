@@ -22,8 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('admin/dangnhap','userController@getdangnhapAdmin');
+Route::post('admin/dangnhap','userController@postdangnhapAdmin');
+Route::get('admin/logout','userController@getdangxuatAdmin');
+
  // Nhóm những trang nào liên quan điến admin
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	Route::group(['prefix'=>'category'],function(){
 		
 		Route::get('list','danhmucController@getDanhSach');
@@ -107,3 +111,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

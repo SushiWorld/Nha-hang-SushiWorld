@@ -27,6 +27,7 @@
                                 <th>Tên khách hàng</th>
                                 <th>Email</th>
                                 <th>Số điện thoại</th>
+                                <th>Trạng thái</th>
                                 <th>Xóa</th>
                                 <th>Chi tiết</th>
                             </tr>
@@ -38,6 +39,13 @@
                                 <td>{{$res->name}}</td>
                                 <td>{{$res->email}}</td>
                                 <td>{{$res->phone}}</td>
+                                <td>
+                                    @if($res->status == 0)
+                                    {{'Đang chờ xử lý'}}
+                                    @else
+                                    {{'Đã xác nhận'}}
+                                    @endif
+                                </td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/reservation/delete/{{$res->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/reservation/detail/{{$res->id}}">Chi tiết</a></td>
                             </tr>

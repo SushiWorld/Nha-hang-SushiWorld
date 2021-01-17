@@ -1,73 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="utf-8">
+
 <head>
+
+    <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+    <!-- Site Metas -->
+    <title>SushiWorld - Đăng nhập Admin</title>
+    <base href="{{asset('')}}">
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Khoa Phạm</title>
+    <!-- Site Icons -->
+    <link rel="icon" href="upload/main/icon_site.png" type="imgages/icon">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="admin_asset/dist/css/style.css">
+    <link rel="stylesheet" href="admin_asset/dist/css/style-login.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="admin_asset/dist/css/responsive.css">
+    <!-- color -->
+    <link id="changeable-colors" rel="stylesheet" href="admin_asset/dist/css/colors/red.css" />
 
-    <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Modernizer -->
+    <script src="admin_asset/dist/js/modernizer.js"></script>
+    <!-- From -->
+    <script src="admin_asset/dist/js/from.js"></script>
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="admin_asset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- DataTables CSS -->
+    <link href="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Modernizer -->
+    <script src="admin_asset/dist/js/modernizer.js"></script>
+    <!-- From -->
+    <script src="admin_asset/dist/js/from.js"></script>
 
 </head>
 
-<body>
+<body style="background: black">
+    <div id="loader">
+        <div id="status"></div>
+    </div>
+    <div id="site-header">
+        <header id="header" class="header-block-top"  style="background-color: #202020;">
+            <div class="container">
+                <div class="row">
+                    <div class="main-menu">
+                        <!-- navbar -->
+                        <nav class="navbar navbar-default" id="mainNav">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="logo">
+                                    <a class="navbar-brand js-scroll-trigger logo-header" href="index.php">
+                                        <img src="upload/main/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="index.php">TRANG CHỦ</a></li>
+                                    <li class="active"><a href="login.php">ĐĂNG NHẬP</a></li>
+                                </ul>
+                            </div>
+                            <!-- end nav-collapse -->
+                        </nav>
+                        <!-- end navbar -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container-fluid -->
+        </header>
+        <!-- end header -->
+    </div>
+    <!-- end site-header -->
 
-    <div class="login_wrapper">
-	
-	<div class="login_holder">
-			
-		<form method="post" action="index.php">
-			
-			<div class="header">
-				<h4 style="border-bottom: 1px solid #FF5722;" class="title">Login Form</h4>
-			</div>
-			
-			<div class="form-group" method="post" action="#">
-				<label>Username</label>
-				<input type="text" name="username" class="form-control" placeholder="Enter Username" autofocus>
-			</div>
-			
-			<div class="form-group">
-				<label>Password</label>
-				<input type="password" name="password" class="form-control" placeholder="Enter your password">
-			</div>
-			
-			<!--<p><a style="color: #FF5722;" href="register.php">No account yet! Click Here to register</a></p>-->
-			
-			<input type="submit" name="submit" value="Login" class="btn btn-info btn-fill pull-right" style="background: #FF5722; border-color: #FF5722;" />
-			<div class="clearfix"></div>
-			
-		</form>
-		
-	</div>
-	
-</div>
+    <!-- Login -->
+    <div class="bg-login">
+        <div class="formlogin">
+            <div class="wrapper fadeInDown zero-radius">
+                <div id="formContent">
+                    <!-- Icon -->
+                    <div class="fadeIn first">
+                        <h2 class="my-5">Đăng Nhập</h2>
+                    </div>
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $err)
+                                    {{$err}}; <br>
+                                @endforeach
+                            </div>
+                        @endif
+ 
+                        @if (session('thongbao'))
+                            {{session('thongbao')}}
+                        @endif
 
-    <!-- jQuery -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+                    <!-- Login Form -->
+                    <form role="form" action="admin/dangnhap" method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                        <input type="text" id="email" class="fadeIn second zero-raduis" name="email" value="" placeholder="Tài khoản Admin">
+                        <input type="password" id="password" class="fadeIn third zero-raduis" name="password" value="" placeholder="Mật khẩu">
+                        <div id="formFooter">
+                            <a href="#">Quên mật khẩu?</a>
+                        </div>
+                        <input type="submit" name="btnlogin" class="fadeIn fourth zero-raduis" value="ĐĂNG NHẬP">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <div id="footer" class="copyright-main">
+        <h6 class="copy-title"> Bản quyền &copy; thuộc về nhóm Đức - Đạt - Thiên.</h6>
+    </div>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="dist/js/sb-admin-2.js"></script>
+    <!-- ALL JS FILES -->
+    <script src="admin_asset/dist/js/all.js"></script>
+    <script src="admin_asset/dist/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="admin_asset/dist/js/custom.js"></script>
 
 </body>
-
-</html>
+</html> 

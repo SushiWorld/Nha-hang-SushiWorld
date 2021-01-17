@@ -12,7 +12,7 @@ class reservationController extends Controller
     //
     public function getDanhSach()
     {
-        $reservation = reservation::orderBy('id','DESC')->get();
+        $reservation = reservation::all();
         return view('admin.reservation.list',['reservation'=>$reservation]);
     }
 

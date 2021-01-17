@@ -95,11 +95,11 @@
                                     <option value="0" 
                                         @if($reservation->status == 0)
                                             {{"checked"}}
-                                        @endif>pending</option>
+                                        @endif>Đang chờ xử lý</option>
                                     <option value="1"
                                         @if($reservation->status == 1)
                                             {{"checked"}}
-                                        @endif>confirm</option>
+                                        @endif>Đã xác nhận</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-default">Cập nhập</button>
