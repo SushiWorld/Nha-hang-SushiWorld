@@ -42,6 +42,7 @@ class danhmucController extends Controller
         $danhmuc = new category;
         $danhmuc->food_category=$request->food_category;
         $danhmuc->cate_des=$request->cate_des;
+        $danhmuc->icon="";
         $danhmuc->save();
 
         return redirect('admin/category/add')->with('thongbao','Thêm thành công');

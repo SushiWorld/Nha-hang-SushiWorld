@@ -114,4 +114,12 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home','PagesController@home');
+
+Route::get('blog',function(){
+	return view('pages.blog');
+});
+
+Route::get('contact',function(){
+	return view('pages.contact');
+});
