@@ -93,7 +93,7 @@ class userController extends Controller
 
         $user->save();
 
-        return redirect('admin/user/add')->with('thongbao','Sửa thành công');
+        return redirect('admin/user/add/'.$id)->with('thongbao','Sửa thành công');
         
     }
 

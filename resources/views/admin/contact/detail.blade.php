@@ -2,17 +2,18 @@
 
     @section('content')
 
+
 <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Thực đơn
-                            <small>Thêm</small>
+                        <h1 class="page-header">Chi tiết đơn hàng
+                            <small>Đơn {{$lienhe->id}}</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    <div class="col-lg-7" style="padding-bottom:120px">
+                    <div class="col-lg-9" style="padding-bottom:120px">
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -27,45 +28,49 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif
+ 
 
-                        <form action="admin/food/add" method="POST" enctype="multipart/form-data">
+                        <form action="admin/contact/detail/{{$lienhe->id}}" method="POST" enctype="multipart/form-data">
+                            
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             
                             <div class="form-group">
-                                <label>Danh mục</label>
-                                <select class="form-control" name="DanhMuc">
-                                    @foreach ($danhmuc as $dm)
-                                        <option value="{{$dm->id}}">{{$dm->food_category}}</option>
-                                    @endforeach
-                                </select>
+                                <label>Tên khách hàng</label>
+                                <input class="form-control" name="customer_name" value="{{$lienhe->customer_name}}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" name="email" value="{{$lienhe->email}}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input class="form-control" name="phone" value="{{$lienhe->phone}}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Nội dung</label>
+                                <textarea id="demo" class="form-control" name="message" rows="3">{{$lienhe->message}}</textarea>
                             </div>
 
                             <div class="form-group">
-                                <label>Hình ảnh</label>
-                                <input type="file" class="form-control" name="food_img"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Tên món ăn</label>
-                                <input class="form-control" name="food_name" placeholder="Điền tên món ăn" />
-                            </div>
-                            <div class="form-group">
-                                <label>Giá cả</label>
-                                <input class="form-control" name="food_price" placeholder="Giá cả" />
-                            </div>
-                            <div class="form-group">
-                                <label>Mô tả món ăn</label>
-                                <textarea id="demo" class="form-control" name="food_description" rows="3" placeholder="Điền mô tả món ăn"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Nối bật &nbsp; &nbsp;</label>
+                                <label>Trạng thái &nbsp; &nbsp;</label>
                                 <label class="radio-inline">
-                                    <input name="food_highlight" value="0" checked="" type="radio">Không
+                                    <input name="status" value="0" 
+                                        @if($lienhe->status == 0)
+                                            {{"checked"}}
+                                        @endif
+
+                                        type="radio">Không hiển thị
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="food_highlight" value="1" type="radio">Có
+                                    <input name="status" value="1" 
+                                        @if($lienhe->status == 1)
+                                            {{"checked"}}
+                                        @endif
+
+                                    type="radio">Hiển thị
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm món ăn</button>
+                            <button type="submit" class="btn btn-default">Cập nhập</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>
@@ -74,7 +79,6 @@
             </div>
             <!-- /.container-fluid -->
         </div>
-<!-- end -->
-
+        <!-- /#page-wrapper -->
 
     @endsection

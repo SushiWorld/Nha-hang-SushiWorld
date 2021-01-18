@@ -86,21 +86,27 @@
 
                             <div class="form-group">
                                 <label>Ghi chú</label>
-                                <input class="form-control" name="note" value="{{$reservation->note}}"/>
+                                <textarea id="demo" class="form-control" name="note" rows="3">{{$reservation->note}}</textarea>
                             </div>
 
                             <div class="form-group">
-                                <label>Trạng thái</label>
-                                <select class="form-control" name="DanhMuc">
-                                    <option value="0" 
+                                <label>Trạng thái &nbsp; &nbsp;</label>
+                                <label class="radio-inline">
+                                    <input name="status" value="0" 
                                         @if($reservation->status == 0)
                                             {{"checked"}}
-                                        @endif>Đang chờ xử lý</option>
-                                    <option value="1"
+                                        @endif
+
+                                        type="radio">Đang chờ xử lý
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="status" value="1" 
                                         @if($reservation->status == 1)
                                             {{"checked"}}
-                                        @endif>Đã xác nhận</option>
-                                </select>
+                                        @endif
+
+                                    type="radio">Đã xác nhận
+                                </label>
                             </div>
                             <button type="submit" class="btn btn-default">Cập nhập</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>

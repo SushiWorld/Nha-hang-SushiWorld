@@ -14,6 +14,16 @@
                             <!-- /.nav-second-level -->
                         </li>
 
+                        <li>
+                            <a href="admin/contact/list"><i class="fa fa-bar-chart-o fa-fw"></i> Đánh giá<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/contact/list"> Danh sách</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
                         <li>
                             <a href="admin/category/list"><i class="fa fa-bar-chart-o fa-fw"></i> Danh mục<span class="fa arrow"></span></a>

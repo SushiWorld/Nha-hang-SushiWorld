@@ -30,6 +30,8 @@
     <!-- DataTables Responsive CSS -->
     <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
+    @yield('css')
+
 </head>
 
 <body>
@@ -70,6 +72,11 @@
         })
     })
     </script>
+
+    @yield('script')
+
+    <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
+
 </body>
 
 </html>

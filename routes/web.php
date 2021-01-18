@@ -16,6 +16,7 @@ use App\Models\slide;
 use App\Models\User;
 use App\Models\reservation;
 use App\Models\kinds;
+use App\Models\contact;
 
 
 Route::get('/', function () {
@@ -108,7 +109,15 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		Route::get('delete/{id}','loaibanController@getXoa');
 	});
 
+	Route::group(['prefix'=>'contact'],function(){
+		
+		Route::get('list','lienheController@getDanhSach');
 
+		Route::get('detail/{id}','lienheController@getSua');
+		Route::post('detail/{id}','lienheController@postSua');
+
+		Route::get('delete/{id}','lienheController@getXoa');
+	});
 
 });
 
@@ -120,6 +129,4 @@ Route::get('blog',function(){
 	return view('pages.blog');
 });
 
-Route::get('contact',function(){
-	return view('pages.contact');
-});
+Route::get('contact','PagesController@contact');

@@ -78,26 +78,50 @@
         <!-- end header -->
     </div>
 	<!-- end site-header -->
-	
+	<!-- ======= Testimonials Section ======= -->
+    
+
     <!-- contact form -->
     <div class="contact-form spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
-                    <form action="#" name="myform" onsubmit="contact()">
-                        <div class="input-list">
-                            <input type="text" name="hoten" value="" placeholder="Họ & tên">
-                            <input type="text" name="sdt" value="" placeholder="Số điện thoại">
-                            <input type="text" name="email" value="" placeholder="Email">
+                    
+                    @foreach($lienhe as $lh)
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="testimonials-carousel testimonials">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <h3>{{$lh->customer_name}}</h3>
+                                    <p><i class="bx bxs-quote-alt-left quote-icon-left">
+                                        {{$lh->message}}
+                                    </i></p>
+                                </div>
+                            </div>
                         </div>
-                        <textarea name="textarea" value="" placeholder="Viết gì đó cho chúng tôi..."></textarea>
-                        <input type="submit" name="submit" value="GỬI" class="site-btn">
-                    </form>
+                    </div>
+                    @endforeach
+
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 30px;">
+                        <h2 style="margin-bottom: 15px;"><b>LIÊN HỆ VỚI CHÚNG TÔI</b></h2>
+                        <form action="#" name="myform" onsubmit="contact()">
+                            <div class="input-list">
+                                <input type="text" name="hoten" value="" placeholder="Họ & tên">
+                                <input type="text" name="sdt" value="" placeholder="Số điện thoại">
+                                <input type="text" name="email" value="" placeholder="Email">
+                            </div>
+                            <textarea name="textarea" value="" placeholder="Viết gì đó cho chúng tôi..."></textarea>
+                            <input type="submit" name="submit" value="GỬI" class="site-btn">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        
     <!-- end contact form -->
 
     <!-- contact info -->
@@ -106,7 +130,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="contact__text">
-                        <h3>THÔNG TIN LIÊN HỆ</h3>
+                        <h2><b>THÔNG TIN LIÊN HỆ</b></h2>
                         <p>Nhà hàng Sushi World luôn lắng nghe vì bạn. Mọi ý kiến đóng góp & phản hồi của quý khách là điều quý giá đối với chúng tôi.
                         </p>
                         <ul>

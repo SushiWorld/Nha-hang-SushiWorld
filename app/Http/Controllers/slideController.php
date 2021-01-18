@@ -87,7 +87,6 @@ class slideController extends Controller
                 'slide_content.required'=>'Bạn chưa nhập nội dung'
             ]);
 
-        $slide = new slide;
         $slide->title=$request->title;
         $slide->slide_content=$request->slide_content;
         $slide->link = "";
@@ -115,7 +114,7 @@ class slideController extends Controller
 
         $slide->save();
 
-        return redirect('admin/slide/add')->with('thongbao','Sửa thành công');
+        return redirect('admin/slide/add/'.$id)->with('thongbao','Sửa thành công');
     }
 
     public function getXoa($id)

@@ -40,18 +40,13 @@
                                 <select class="form-control" name="DanhMuc" id="DanhMuc">
                                     @foreach ($danhmuc as $dm)
                                         <option 
+                                            @if($thucdon->category->id == $dm->id)
 
-                                        @if($thucdon->category->id == $dm->id)
+                                            {{"selected"}}
 
-                                        {{"selected"}}
-
-                                        @endif
-
-                                        value="{{$dm->id}}"
-
-                                            {{$dm->food_category}}
-
-                                        </option>
+                                            @endif
+                                            
+                                        value="{{$dm->id}}">{{$dm->food_category}}</option>
                                     @endforeach
 
                                 </select>
@@ -71,10 +66,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Mô tả món ăn</label>
-                                <input class="form-control" name="food_description" placeholder="Điền mô tả món ăn" value="{{$thucdon->food_description}}"/>
+                                <textarea id="demo" class="form-control" name="food_description" rows="3">{{$thucdon->food_description}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Nối bật</label>
+                                <label>Nối bật &nbsp; &nbsp;</label>
                                 <label class="radio-inline">
                                     <input name="food_highlight" value="0" 
                                         @if($thucdon->food_highlight == 0)

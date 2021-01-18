@@ -69,7 +69,7 @@ class reservationController extends Controller
 
         $reservation->save();
 
-        return redirect('admin/reservation/detail/'.$id)->with('thongbao','Sửa thành công');
+        return redirect('admin/reservation/detail/'.$id)->with('thongbao','Cập nhập thành công');
     }
 
     public function getXoa($id)

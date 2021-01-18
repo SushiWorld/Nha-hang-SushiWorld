@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label>Nội dung</label>
-                            <input class="form-control" name="slide_content" placeholder="Nội dung..." />
+                            <textarea id="demo" class="form-control" name="slide_content" rows="3" placeholder="Nội dung..."></textarea>
                         </div>
                         <div class="form-group">
                             <label>Link</label>

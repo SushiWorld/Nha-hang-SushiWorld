@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Nội dung</label>
-                                <input class="form-control" name="slide_content" placeholder="Nội dung..." value="{{$slide->slide_content}}"/>
+                                <textarea id="demo" class="form-control" name="slide_content" rows="3">{{$slide->slide_content}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Link</label>

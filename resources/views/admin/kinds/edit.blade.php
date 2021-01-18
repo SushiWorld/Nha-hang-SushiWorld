@@ -34,12 +34,12 @@
                         <form action="admin/kinds/edit/{{$loaiban->id}}" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <div class="form-group">
-                                <label>Tên danh mục</label>
+                                <label>Tên loại bàn</label>
                                 <input class="form-control" name="kind_item" placeholder="Nhập tên danh mục" value="{{$loaiban->kind_item}}" />
                             </div>
                             
                             <div class="form-group">
-                                <label>Mô tả danh mục</label>
+                                <label>Mô tả </label>
                                 <input class="form-control" name="kind_des" placeholder="Nhập mô tả" value="{{$loaiban->kind_des}}"></textarea>
                             </div>
                             
