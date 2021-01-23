@@ -93,6 +93,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		Route::post('detail/{id}','reservationController@postSua');
 
 		Route::get('delete/{id}','reservationController@getXoa');
+
 	});
 
 	Route::group(['prefix'=>'kinds'],function(){
@@ -121,9 +122,12 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 });
 
+Route::post ('order','Submit@themorder');
+
 Auth::routes();
 
 Route::get('home','PagesController@home');
+Route::post('submit','Submit@save');
 
 Route::get('blog',function(){
 	return view('pages.blog');

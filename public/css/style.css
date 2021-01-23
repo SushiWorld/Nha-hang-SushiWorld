@@ -1421,7 +1421,6 @@ html, body{ height: 100%; }
 	background:#f5f5f5;
 	color:#202020;
 	padding:12px;
-	text-transform:capitalize;
 	border-radius: 4px;
 	opacity: 1;
 	min-height:54px;
@@ -2054,15 +2053,15 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .testimonial-wrap {
-  padding-left: 50px;
+    padding-left: 0;
 }
 
 .testimonials .testimonial-item {
   box-sizing: content-box;
   padding: 20px 30px 0px 50px;
-  margin:15px;
+  margin: 30px;
   min-height: 250px;
-  box-shadow: 0px 2px 12px rgb(255 0 0 / 15%);
+  box-shadow: 0 8px 6px -6px red;
   position: relative;
   background: #fff;
 }
@@ -2089,7 +2088,7 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 }
 
 .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #c60808;
+  color: #000000;
   font-size: 15px;
 }
 

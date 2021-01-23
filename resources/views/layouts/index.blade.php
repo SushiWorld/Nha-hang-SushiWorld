@@ -11,7 +11,6 @@
 
     <!-- Site Metas -->
     <title>Nhà Hàng Sushi World | Home</title>
-    <base href="{{asset('')}}">
 
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -36,7 +35,6 @@
     <!-- From -->
     <script src="js/from.js"></script>
     
-    @yield('css')
 </head>
 
 <body>
@@ -46,7 +44,6 @@
     @yield('content')
 
     @include('layouts.footer')
-    @yield('script')
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -85,28 +85,10 @@
     <div class="contact-form spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    
-                    @foreach($lienhe as $lh)
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="testimonials-carousel testimonials">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <h3>{{$lh->customer_name}}</h3>
-                                    <p><i class="bx bxs-quote-alt-left quote-icon-left">
-                                        {{$lh->message}}
-                                    </i></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
 
-
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 30px;">
-                        <h2 style="margin-bottom: 15px;"><b>LIÊN HỆ VỚI CHÚNG TÔI</b></h2>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 30px;">-->
+                        <h2><b>LIÊN HỆ VỚI CHÚNG TÔI</b></h2>
                         <form action="#" name="myform" onsubmit="contact()">
                             <div class="input-list">
                                 <input type="text" name="hoten" value="" placeholder="Họ & tên">
@@ -121,7 +103,6 @@
             </div>
         </div>
 
-        
     <!-- end contact form -->
 
     <!-- contact info -->
@@ -157,6 +138,28 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.4782732618687!2d109.1971873147634!3d12.283544991309931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317067fb4e284bd7%3A0x66bee30fdf4d2331!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUaMO0bmcgdGluIExpw6puIGzhuqFj!5e0!3m2!1svi!2s!4v1592730121745!5m2!1svi!2s"
                             width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
+                </div>
+
+                <h2><b>PHẢN HỒI TỪ KHÁCH HÀNG</b></h2>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                   
+                    
+                    @foreach($lienhe as $lh)
+                    @if($lh->status == 1)
+                    <div class="col-md-6 col-sm-6">
+                        <div class="testimonials-carousel testimonials">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <h3>{{$lh->customer_name}}</h3>
+                                    <p><i class="bx bxs-quote-alt-left quote-icon-left">
+                                        {{$lh->message}}
+                                    </i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+
                 </div>
             </div>
         </div>
