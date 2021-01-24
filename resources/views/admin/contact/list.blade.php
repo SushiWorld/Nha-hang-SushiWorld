@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Đơn đặt bàn
+                        <h1 class="page-header">Phản hồi khách hàng
                             <small>Danh sách</small>
                         </h1>
                     </div>

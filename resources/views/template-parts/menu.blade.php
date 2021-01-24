@@ -37,8 +37,8 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <!-- end col -->
                                     @endforeach
+                                    <!-- end col -->
                                 </div>
                             @endforeach
                         </div>

@@ -139,27 +139,36 @@
                             width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <h2><b>PHẢN HỒI TỪ KHÁCH HÀNG</b></h2>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                   
-                    
-                    @foreach($lienhe as $lh)
-                    @if($lh->status == 1)
-                    <div class="col-md-6 col-sm-6">
-                        <div class="testimonials-carousel testimonials">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <h3>{{$lh->customer_name}}</h3>
-                                    <p><i class="bx bxs-quote-alt-left quote-icon-left">
-                                        {{$lh->message}}
-                                    </i></p>
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__text">
+                        <h2><b>PHẢN HỒI TỪ KHÁCH HÀNG</b></h2>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                   
+                            
+                            @foreach($lienhe as $lh)
+                            @if($lh->status == 1)
+                            <div class="col-lg-6 col-md-12 col-sm-6">
+                                <div class="testimonials-carousel testimonials">
+                                    <div class="testimonial-wrap">
+                                        <div class="testimonial-item">
+                                            <h3>{{$lh->customer_name}}</h3>
+                                            <p><i class="bx bxs-quote-alt-left quote-icon-left">
+                                                {{$lh->message}}
+                                            </i></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            @endif
+                            @endforeach
                         </div>
                     </div>
-                    @endif
-                    @endforeach
-
                 </div>
             </div>
         </div>

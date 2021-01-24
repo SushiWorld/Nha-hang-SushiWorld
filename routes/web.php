@@ -23,8 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin/dangnhap','userController@getdangnhapAdmin');
-Route::post('admin/dangnhap','userController@postdangnhapAdmin');
+Route::get('admin/login','userController@getdangnhapAdmin');
+Route::post('admin/login','userController@postdangnhapAdmin');
 Route::get('admin/logout','userController@getdangxuatAdmin');
 
  // Nhóm những trang nào liên quan điến admin

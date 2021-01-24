@@ -78,8 +78,8 @@
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="index.php">TRANG CHỦ</a></li>
-                                    <li class="active"><a href="login.php">ĐĂNG NHẬP</a></li>
+                                    <li><a href="home">TRANG CHỦ</a></li>
+                                    <li class="active"><a href="login">ĐĂNG NHẬP</a></li>
                                 </ul>
                             </div>
                             <!-- end nav-collapse -->
@@ -117,13 +117,10 @@
                         @endif
 
                     <!-- Login Form -->
-                    <form role="form" action="admin/dangnhap" method="POST">
+                    <form role="form" action="admin/login" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                         <input type="text" id="email" class="fadeIn second zero-raduis" name="email" value="" placeholder="Tài khoản Admin">
                         <input type="password" id="password" class="fadeIn third zero-raduis" name="password" value="" placeholder="Mật khẩu">
-                        <div id="formFooter">
-                            <a href="#">Quên mật khẩu?</a>
-                        </div>
                         <input type="submit" name="btnlogin" class="fadeIn fourth zero-raduis" value="ĐĂNG NHẬP">
                     </form>
                 </div>

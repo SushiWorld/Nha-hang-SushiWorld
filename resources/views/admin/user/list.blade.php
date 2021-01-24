@@ -25,8 +25,8 @@
                                 <th>ID</th>
                                 <th>Tên tài khoản</th>
                                 <th>Email</th>
-                                <th>Delete</th>
-                                <th>Edit</th>
+                                <th>Xóa</th>
+                                <th>Sửa</th>
                             </tr>
                         </thead>
                         <tbody>

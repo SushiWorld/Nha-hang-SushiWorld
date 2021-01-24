@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Chi tiết đơn hàng
-                            <small>Đơn {{$reservation->id}}</small>
+                            <small>Đơn hàng của "{{$reservation->name}}"</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->

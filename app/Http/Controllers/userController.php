@@ -130,12 +130,12 @@ class userController extends Controller
         }
         else
         {
-            return redirect('admin/dangnhap')->with('thongbao','Đăng nhập thất bại');
+            return redirect('admin/login')->with('thongbao','Đăng nhập thất bại');
         }
     }
 
     public function getdangxuatAdmin(){
         Auth::logout();
-        return redirect ('admin/dangnhap');
+        return redirect ('admin/login');
     }
 }
