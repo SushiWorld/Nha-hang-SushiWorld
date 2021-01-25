@@ -32,7 +32,7 @@ Phần quản lý (nhóm chức năng hệ thống)
 *   Quản lý giá cả, chi tiết món ăn
 
 ##Cách download và cài đặt
-Các bước để chạy project:
+Các bước để chạy project
 *   Bước 1: Tiến hành download project và giải nén tại thư mục htdocs của xampp
     ![image](https://user-images.githubusercontent.com/74713811/105724230-38d34f80-5f5a-11eb-91e7-15a081e184ce.png)
 *   Bước 2: Tiến hành giải nén thư mục "connect", bao gồm file .env và vendor
@@ -42,4 +42,3 @@ Các bước để chạy project:
     
 ## Có thể truy cập website một cách nhanh chóng theo đường link 
 http://sushiworldrestaurant.atwebpages.com/public/home
-
