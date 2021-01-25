@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 23, 2021 lúc 09:07 AM
+-- Thời gian đã tạo: Th1 24, 2021 lúc 07:42 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -69,9 +69,9 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `customer_name`, `phone`, `email`, `message`, `status`, `updated_at`, `created_at`) VALUES
 (1, 'Ngọc Huỳnh', '0125324515', 'huynhngoc@gmail.com', 'Nhà hàng tiếp nồng nhiệt của nhân viên, đặc biệt là lễ tân mặc kimono xinh xắn, view đẹp. Tôi thì không ăn được sashimi nhưng tôi vẫn chọn được phần ăn hợp với mình. Nhân dịp trung thu nên được tặng món salad free bánh trung thu và trà gạo nóng được free luôn. Thật hấp dẫn giá chỉ 470k tôi rất thích lần sau sẽ ghé lại!', 1, '2021-01-18 13:07:10', NULL),
-(2, 'Tu Do', '0515324515', 'tudo@gmail.com', 'Nhà hàng có view đẹp, không gian ấm cúng, nhân viên nhiệt tình, vui vẻ, món ăn được làm nhanh, ngon và tươi...nói chung mình rất hài lòng. Mình sẽ quay lại nhà hàng này một ngày không xa.', 1, '2021-01-18 13:03:02', NULL),
+(2, 'Tu Do', '0515324515', 'tudo@gmail.com', 'Nhà hàng có view đẹp, không gian ấm cúng, nhân viên nhiệt tình, vui vẻ, món ăn được làm nhanh, ngon và tươi...nói chung mình rất hài lòng. Mình sẽ quay lại nhà hàng này một ngày không xa.', 0, '2021-01-24 03:09:02', NULL),
 (3, 'Hoàng Phuy', '0514956266', 'phuyphuy@gmail.com', 'Menu mới thay đổi, giá rất tốt. Có đầu bếp người Nhật đứng chế biến trực tiếp. Có thêm bò Wagyu, cua tuyết, cá ngừ đại dương. Phục vụ tốt chu đáo, món lên rất nhanhTrang trí cũng rất nổi bật', 1, '2021-01-18 13:03:58', NULL),
-(4, 'Lộc', '0959150995', 'nguyenloc@gmail.com', 'Sashimi tươi lắm nha, giá cũng tốt nữa, nước tương chấm và wasabi vị lạ nhưng đặc biệt. Cơm làm sushi hạt to và độ dẻo vừa đủ nên mình ưng luôn. Lần sau mình sẽ ghé lại thưởng thức sashimi và mấy món khác nữa. Bàn vip phòng riêng view biển rất đẹp, nhân viên nhiệt tình và chu đáo.', 1, '2021-01-18 13:04:13', NULL);
+(4, 'Lộc', '0959150995', 'nguyenloc@gmail.com', 'Sashimi tươi lắm nha, giá cũng tốt nữa, nước tương chấm và wasabi vị lạ nhưng đặc biệt. Cơm làm sushi hạt to và độ dẻo vừa đủ nên mình ưng luôn. Lần sau mình sẽ ghé lại thưởng thức sashimi và mấy món khác nữa. Bàn vip phòng riêng view biển rất đẹp, nhân viên nhiệt tình và chu đáo.', 0, '2021-01-24 03:08:56', NULL);
 
 -- --------------------------------------------------------
 
@@ -97,9 +97,9 @@ CREATE TABLE `food` (
 
 INSERT INTO `food` (`id`, `food_name`, `food_price`, `food_description`, `cate_id`, `food_img`, `food_highlight`, `updated_at`, `created_at`) VALUES
 (1, 'Bánh xèo Nhật', '80K', 'Bánh xèo chuẩn hương vị Nhật độc quyền của Nhà hàng Sushi World.', 1, 'menu-item-thumbnail-01.jpg', 1, '0000-00-00', '0000-00-00'),
-(2, 'Pizza hải sản Nhật', '145K', 'Pizza gồm cá thu Nhật, mực, tôm, hàu, sốt cà chua Nhật.', 1, 'menu-item-thumbnail-02.jpg', 1, '0000-00-00', '0000-00-00'),
+(2, 'Pizza hải sản Nhật', '145K', 'Pizza gồm cá thu Nhật, mực, tôm, hàu, sốt cà chua Nhật.', 1, 'menu-item-thumbnail-02.jpg', 1, '2021-01-24', '0000-00-00'),
 (3, 'Salad rau quả', '40K', 'Gồm hành tây, hành củ tím, cà chua bi, rau salack, giấm nhật, sốt mayonnaise.', 1, 'menu-item-thumbnail-03.jpg', 1, '0000-00-00', '0000-00-00'),
-(4, 'Măng tây áp chảo', '70K', 'Măng tây bổ sung chất xơ và cung cấp nhiều chất dinh dưỡng tốt cho sức khỏe.', 1, 'menu-item-thumbnail-04.jpg', 1, '0000-00-00', '0000-00-00'),
+(4, 'Măng tây áp chảo', '70K', 'Măng tây bổ sung chất xơ và cung cấp nhiều chất dinh dưỡng tốt cho sức khỏe.', 1, 'menu-item-thumbnail-04.jpg', 1, '2021-01-24', '0000-00-00'),
 (5, 'Dưa chuột chấm sốt Miso', '70K', 'Dưa chuột Nhật chấm với nước sốt Miso ngọt cay nồng.', 1, 'menu-item-thumbnail-05.jpg', 1, '0000-00-00', '0000-00-00'),
 (6, 'Súp Miso', '55K', 'Gồm nước dùng Dashi kết hợp tương Miso, đậu phụ, rong biển.', 1, 'menu-item-thumbnail-06.jpg', 1, '0000-00-00', '0000-00-00'),
 (7, 'Maki', '50K', 'Maki Sushi cơm cuộn rong biển gồm 1 nhân đủ loại thuần truyền thống.', 2, 'menu-item-thumbnail-07.jpg', 1, '0000-00-00', '0000-00-00'),
@@ -233,7 +233,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `updated_at`, `created_at`) VALUES
-(2, 'Bảo Thiên', 'baothien@gmail.com', '$2y$10$Ux.W2wFa2nwin471r0z3wOrQrVGdwJaEK5dxIrsMZmUENfxqA3nua', 'YOBlDMdg5mgUKeFZ1gyOTLarSjDsUEFRRedWt7TEUoFaNr5pT0XJ7n2UNr19', '2021-01-16', '0000-00-00');
+(2, 'Bảo Thiên', 'baothien@gmail.com', '$2y$10$Ux.W2wFa2nwin471r0z3wOrQrVGdwJaEK5dxIrsMZmUENfxqA3nua', 'xUfXcgMu9yjXRMhUeeq8o7mqu65T2OFtuv36xZ99WjbJVbyPbXOfIAA3Rwo8', '2021-01-16', '0000-00-00'),
+(4, 'Anh Đức', 'anhduc@gmail.com', '$2y$10$u8v1pyMzQp8jlZGobKbxgOBLxIkg.Sp.06tpGoLNeBkwz6S7mK0r6', 'EfYTKdG5efAWZTigMeb2ihGVZxkvgu8B4FqtwKwCt2f41TrGd9Arud9djewk', '0000-00-00', '0000-00-00');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -327,7 +328,7 @@ ALTER TABLE `slide`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

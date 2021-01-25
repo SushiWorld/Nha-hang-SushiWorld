@@ -92,8 +92,8 @@
                         <form action="#" name="myform" onsubmit="contact()">
                             <div class="input-list">
                                 <input type="text" name="hoten" value="" placeholder="Họ & tên">
-                                <input type="text" name="sdt" value="" placeholder="Số điện thoại">
-                                <input type="text" name="email" value="" placeholder="Email">
+                                <input type="tel" name="sdt" pattern="[0-9]{10}" value="" placeholder="Số điện thoại">
+                                <input type="email" name="email" value="" placeholder="Email">
                             </div>
                             <textarea name="textarea" value="" placeholder="Viết gì đó cho chúng tôi..."></textarea>
                             <input type="submit" name="submit" value="GỬI" class="site-btn">

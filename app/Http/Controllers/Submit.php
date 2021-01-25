@@ -31,12 +31,20 @@ class Submit extends Controller
     	$datban->no_of_guest=$req->persons;
     	$datban->date_res=$req->date;
     	$datban->time=$req->time;
-    	$datban->occasion=$req->occasion;
-    	$datban->note=$req->formnote;
     	$datban->kind = (int)substr($req->kinds, 0, 1); ;
     	$datban->status =$req->status;
-    	$datban->save();
+    	
+      if(is_null($req->formnote)){
+        $req->formnote="Không";
+        $datban->note=$req->formnote;
+      }else $datban->note=$req->formnote;
+      
+      if(is_null($req->occasion)){
+        $req->occasion="Không";
+        $datban->occasion=$req->occasion;
+      }else $datban->occasion=$req->occasion;
 
+      $datban->save();
     	return redirect('home')->with('thongbao','Order thành công');
 
     }

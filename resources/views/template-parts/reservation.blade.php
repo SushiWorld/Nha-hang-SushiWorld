@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
-                                    <input type="number" name="phone" id="phone" placeholder="SỐ ĐIỆN THOẠI" required="required" data-error="Vui lòng điền vào ô này.">
+                                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="SỐ ĐIỆN THOẠI" required="required" data-error="Vui lòng điền vào ô này.">
                                 </div>
                             </div>
                             

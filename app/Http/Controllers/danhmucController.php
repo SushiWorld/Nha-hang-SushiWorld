@@ -59,13 +59,12 @@ class danhmucController extends Controller
         $danhmuc = category::find($id);
         $this->validate($request,
             [
-                'food_category' => 'required|unique:category,food_category|min:2|max:100',
+                'food_category' => 'required|min:2|max:100',
                 'cate_des' => 'required|min:2|max:100'
             ],
 
             [
                 'food_category.required'=>'Bạn chưa nhập tên danh mục',
-                'food_category.unique'=>'Tên danh mục đã tồn tại',
                 'food_category.min'=>'Tên danh mục phải có độ dài từ 3-100 kí tự',                
                 'food_category.max'=>'Tên danh mục phải có độ dài từ 3-100 kí tự',
 
