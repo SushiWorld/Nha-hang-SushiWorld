@@ -1,5 +1,5 @@
-# Nha-hang-SushiWorld
-Xây dựng Website Giới thiệu Nhà hàng Sushi World
+# NHÀ HÀNG SUSHI WORLD
+Xây dựng Website Quản lý Nhà hàng Sushi World
 
 ![banner](https://user-images.githubusercontent.com/74713811/104671592-af797d00-5710-11eb-93e4-9def1881a693.png)
 
