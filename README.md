@@ -35,7 +35,7 @@ Xây dựng một website với các chức năng đáp ứng nhu cầu thông t
 #### Các bước để chạy project
 *   Bước 1: Tiến hành download project và giải nén tại thư mục htdocs của xampp
     ![image](https://user-images.githubusercontent.com/74713811/105724230-38d34f80-5f5a-11eb-91e7-15a081e184ce.png)
-*   Bước 2: Tiến hành giải nén thư mục "connect", bao gồm file .env và vendor
+*   Bước 2: Tiến hành giải nén thư mục "connect.rar", bao gồm file .env và vendor
 *   Bước 3: Tạo database mới trên phpMyadmin, nhập file "sushiworld.sql" nằm trong thư mục "databases"
 *   Bước 4: Truy cập file .env, tiến hành đổi tên database theo tên vừa mới đặt
 *   Bước 5: Bật xampp control, trên web gõ link http://localhost/Nha-hang-SushiWorld/public/home để tiến hành truy cập website
