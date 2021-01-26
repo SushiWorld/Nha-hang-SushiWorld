@@ -39,6 +39,7 @@ Xây dựng một website với các chức năng đáp ứng nhu cầu thông t
 *   Bước 3: Tạo database mới trên phpMyadmin, nhập file "sushiworld.sql" nằm trong thư mục "databases"
 *   Bước 4: Truy cập file .env, tiến hành đổi tên database theo tên vừa mới đặt
 *   Bước 5: Bật xampp control, trên web gõ link http://localhost/Nha-hang-SushiWorld/public/home để tiến hành truy cập website
-    
+*   Bước 6: Trên web gõ link http://localhost/Nha-hang-SushiWorld/public/admin/dangnhap để tiến hành đăng nhập vào trang quản lý website
+
 ## Có thể truy cập website một cách nhanh chóng theo đường link 
 http://sushiworldrestaurant.atwebpages.com/public/home
