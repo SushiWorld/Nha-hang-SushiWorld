@@ -36,7 +36,7 @@ class Submit extends Controller
     	$datban->status =$req->status;
     	
       if(is_null($req->formnote)){
-        $req->formnote="Không";
+        $req->formnote="Không có ghi chú";
         $datban->note=$req->formnote;
       }else $datban->note=$req->formnote;
       

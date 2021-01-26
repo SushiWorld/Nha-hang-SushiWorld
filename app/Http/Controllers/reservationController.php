@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\kinds;
 use App\Models\reservation;
+use Mail;
 
 class reservationController extends Controller
 {

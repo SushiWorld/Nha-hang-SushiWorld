@@ -19,7 +19,7 @@ class AdminLoginMidleware
         if(Auth::check()){
             return $next($request);
         }else{
-            return redirect('admin/dangnhap');
+            return redirect('admin/login');
         }
     }
 }
