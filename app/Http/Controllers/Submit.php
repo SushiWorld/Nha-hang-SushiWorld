@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\reservation;
+use App\Models\contact;
 
 class Submit extends Controller
 {
@@ -45,7 +46,19 @@ class Submit extends Controller
       }else $datban->occasion=$req->occasion;
 
       $datban->save();
-    	return redirect('home')->with('thongbao','Order thành công');
+    	return redirect('home#reservation')->with('thongbao','Order thành công. Mã order của quý khách là ORD_0'.$datban->id.'.');
 
+    }
+
+    public function themfeedback(Request $req){
+        $feedback = new contact;
+        $feedback->customer_name=$req->hoten;
+        $feedback->phone=$req->sdt;
+        $feedback->email=$req->email;
+        $feedback->message=$req->message;
+        $feedback->status=$req->status;
+        $feedback->save();
+
+        return redirect('contact')->with('thongbao','Cảm ơn quý khách đã gửi phản hồi cho chúng tôi. Xin chân thành cảm ơn!');
     }
 }

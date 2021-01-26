@@ -123,6 +123,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 });
 
 Route::post ('order','Submit@themorder');
+Route::post ('feedback','Submit@themfeedback');
 
 Auth::routes();
 

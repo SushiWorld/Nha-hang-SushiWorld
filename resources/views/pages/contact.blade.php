@@ -89,13 +89,28 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 30px;">-->
                         <h2><b>LIÊN HỆ VỚI CHÚNG TÔI</b></h2>
-                        <form action="#" name="myform" onsubmit="contact()">
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $err)
+                                    {{$err}}; <br>
+                                @endforeach
+                            </div>
+                        @endif
+ 
+                        @if (session('thongbao'))
+                            <div class="alert alert-success">
+                                <b>{{session('thongbao')}}</b>
+                            </div>
+                        @endif
+                        <form action="feedback" name="myform" method="POST">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <div class="input-list">
                                 <input type="text" name="hoten" value="" placeholder="Họ & tên">
                                 <input type="tel" name="sdt" pattern="[0-9]{10}" value="" placeholder="Số điện thoại">
                                 <input type="email" name="email" value="" placeholder="Email">
+                                <input type="text" hidden="hidden"  name="status" value="0">
                             </div>
-                            <textarea name="textarea" value="" placeholder="Viết gì đó cho chúng tôi..."></textarea>
+                            <textarea name="message" value="" placeholder="Viết gì đó cho chúng tôi..."></textarea>
                             <input type="submit" name="submit" value="GỬI" class="site-btn">
                         </form>
                     </div>

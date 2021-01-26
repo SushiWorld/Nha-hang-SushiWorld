@@ -18,7 +18,8 @@
  
                         @if (session('thongbao'))
                             <div class="alert alert-success">
-                                {{session('thongbao')}}
+                                <p><b style="font-size: 20px;">{{session('thongbao')}}</b></p>
+                                <p><b style="font-size: 20px;">Xin quý khách hãy lưu lại mã và chờ xác nhận.</b></p>
                             </div>
                         @endif
                         <form action="order" method="POST">
@@ -35,7 +36,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
-                                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="SỐ ĐIỆN THOẠI" required="required" data-error="Vui lòng điền vào ô này.">
+                                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="SỐ ĐIỆN THOẠI" required="required" data-error="Vui lòng điền vào ô này.">
                                 </div>
                             </div>
                             
@@ -59,7 +60,7 @@
  
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
-                                    <input type="text" name="occasion" id="occasion" placeholder="DỊP" value="">
+                                    <input type="text" name="occasion" id="occasion" placeholder="DỊP (Không bắt buộc)" value="">
                                 </div>
                             </div>
         
@@ -81,7 +82,7 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-box">
-                                    <input type="text" name="formnote" id="form_note" placeholder="GHI CHÚ (Nếu không có ghi chú, vui lòng điền không)" value="">
+                                    <input type="text" name="formnote" id="form_note" placeholder="GHI CHÚ (Không bắt buộc)" value="">
                                 </div>
                         </div>
 
