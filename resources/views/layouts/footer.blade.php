@@ -53,7 +53,7 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <span><a href="https://mail.google.com/mail/u/0/#inbox?compose=new">trananhducdhcn4a@gmail.com</a></span>
+                                    <span><a href="https://mail.google.com/mail/u/0/#inbox?compose=new">sushiworldrestaurant@gmail.com</a></span>
                                 </p>
                             </div>
                             <!-- end footer-box-c -->

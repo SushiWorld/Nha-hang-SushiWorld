@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\kinds;
 use App\Models\reservation;
+use Mail;
 
 class reservationController extends Controller
 {
@@ -69,6 +70,30 @@ class reservationController extends Controller
 
         $reservation->save();
 
+        $details = [
+            'title'=>'Đơn đặt bàn thành công!',
+            'name'=>$reservation->name,
+            'phone'=>$reservation->phone,
+            'no_of_guest' =>$reservation->no_of_guest,
+            'date_res' =>$reservation->date_res,
+            'time' =>$reservation->time,
+            'occasion' =>$reservation->occasion,
+            'kind' =>$reservation->kind,
+            'note' =>$reservation->note
+        ];
+
+        // $details = [
+        //     'name'=>$reservation->name,
+        //     'phone'=>$reservation->phone,
+        //     'no_of_guest' =>$reservation->no_of_guest,
+        //     'date_res' =>$reservation->date_res,
+        //     'time' =>$reservation->time,
+        //     'occasion' =>$reservation->occasion,
+        //     'kind' =>$reservation->kind,
+        //     'note' =>$reservation->note
+        // ];
+        Mail::to($request->email)->send(new \App\Mail\SendMail($details));
+
         return redirect('admin/reservation/detail/'.$id)->with('thongbao','Cập nhập thành công');
     }
 
@@ -80,3 +105,5 @@ class reservationController extends Controller
         return redirect('admin/reservation/list')->with('thongbao','Xóa thành công');
     }
 }
+
+        
