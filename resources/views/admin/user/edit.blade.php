@@ -52,6 +52,7 @@
                         </div>
                             <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" name="cate_des" class="btn btn-default">Làm mới</button>
+                            <button><a href="admin/user/list"> Quay lại</a></button>
                         <form>
                     </div>
                 </div>

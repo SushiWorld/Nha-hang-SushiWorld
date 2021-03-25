@@ -94,21 +94,6 @@
                                 </div>
                             </div>
                         </form>
-
-                        <!-- <form id="contact-form" action="submit" method="POST">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-box">
-                                    <input type="text" name="form_note" id="form_note" placeholder="GHI CHÚ" value="">
-                                </div>
-                        </div>
-                    
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="reserve-book-btn text-center">
-                                    <button class="hvr-underline-from-center" type="submit" >ĐẶT BÀN NGAY</button>
-                                </div>
-                            </div>
-
-                        </form> -->
                         <!-- end form -->
                     </div>
                     <!-- end col -->

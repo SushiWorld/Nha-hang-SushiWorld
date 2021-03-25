@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 24, 2021 lúc 07:42 AM
+-- Thời gian đã tạo: Th3 24, 2021 lúc 03:21 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -71,7 +71,8 @@ INSERT INTO `contact` (`id`, `customer_name`, `phone`, `email`, `message`, `stat
 (1, 'Ngọc Huỳnh', '0125324515', 'huynhngoc@gmail.com', 'Nhà hàng tiếp nồng nhiệt của nhân viên, đặc biệt là lễ tân mặc kimono xinh xắn, view đẹp. Tôi thì không ăn được sashimi nhưng tôi vẫn chọn được phần ăn hợp với mình. Nhân dịp trung thu nên được tặng món salad free bánh trung thu và trà gạo nóng được free luôn. Thật hấp dẫn giá chỉ 470k tôi rất thích lần sau sẽ ghé lại!', 1, '2021-01-18 13:07:10', NULL),
 (2, 'Tu Do', '0515324515', 'tudo@gmail.com', 'Nhà hàng có view đẹp, không gian ấm cúng, nhân viên nhiệt tình, vui vẻ, món ăn được làm nhanh, ngon và tươi...nói chung mình rất hài lòng. Mình sẽ quay lại nhà hàng này một ngày không xa.', 0, '2021-01-24 03:09:02', NULL),
 (3, 'Hoàng Phuy', '0514956266', 'phuyphuy@gmail.com', 'Menu mới thay đổi, giá rất tốt. Có đầu bếp người Nhật đứng chế biến trực tiếp. Có thêm bò Wagyu, cua tuyết, cá ngừ đại dương. Phục vụ tốt chu đáo, món lên rất nhanhTrang trí cũng rất nổi bật', 1, '2021-01-18 13:03:58', NULL),
-(4, 'Lộc', '0959150995', 'nguyenloc@gmail.com', 'Sashimi tươi lắm nha, giá cũng tốt nữa, nước tương chấm và wasabi vị lạ nhưng đặc biệt. Cơm làm sushi hạt to và độ dẻo vừa đủ nên mình ưng luôn. Lần sau mình sẽ ghé lại thưởng thức sashimi và mấy món khác nữa. Bàn vip phòng riêng view biển rất đẹp, nhân viên nhiệt tình và chu đáo.', 0, '2021-01-24 03:08:56', NULL);
+(4, 'Lộc', '0959150995', 'nguyenloc@gmail.com', 'Sashimi tươi lắm nha, giá cũng tốt nữa, nước tương chấm và wasabi vị lạ nhưng đặc biệt. Cơm làm sushi hạt to và độ dẻo vừa đủ nên mình ưng luôn. Lần sau mình sẽ ghé lại thưởng thức sashimi và mấy món khác nữa. Bàn vip phòng riêng view biển rất đẹp, nhân viên nhiệt tình và chu đáo.', 0, '2021-01-24 03:08:56', NULL),
+(5, 'Hoàng Nguyên', '0152321544', 'nguyenhoang@gmail.com', 'hụutjtyuj', 0, '2021-01-26 02:09:11', '2021-01-26 02:09:11');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ INSERT INTO `food` (`id`, `food_name`, `food_price`, `food_description`, `cate_i
 (7, 'Maki', '50K', 'Maki Sushi cơm cuộn rong biển gồm 1 nhân đủ loại thuần truyền thống.', 2, 'menu-item-thumbnail-07.jpg', 1, '0000-00-00', '0000-00-00'),
 (8, 'Futomaki', '55K', 'Futomaki Sushi cơm cuộn rong biển gồm 2-3 nhân đủ loại thuần truyền thống.', 2, 'menu-item-thumbnail-08.jpg', 1, '0000-00-00', '0000-00-00'),
 (9, 'Gunkan', '70K', 'Gunkan Sushi như một chiếc tàu nhỏ đầy các món cá, trứng cá, trứng tôm, nhím biển..', 2, 'menu-item-thumbnail-09.jpg', 1, '0000-00-00', '0000-00-00'),
-(10, 'Temari', '60K', 'Temari Shushi tròn như quả bóng nhiều loại topping khác nhau tùy theo lựa chọn.                       ', 2, 'menu-item-thumbnail-10.jpg', 1, '0000-00-00', '0000-00-00'),
+(10, 'Temari', '60K', 'Temari Shushi tròn như quả bóng nhiều loại topping khác nhau tùy theo lựa chọn.', 2, 'menu-item-thumbnail-10.jpg', 0, '2021-01-25', '0000-00-00'),
 (11, 'Temaki', '70K', 'Temaki có hình chiếc phễu, bên trong cuộn cơm và cá hồi, trứng cá hồi, rau củ...', 2, 'menu-item-thumbnail-11.jpg', 1, '0000-00-00', '0000-00-00'),
 (12, 'Nigiri', '70K', 'Nigiri Sushi viên nhỏ dài, được phết lên một lớp wasabi và phủ lớp hải sản tươi.', 2, 'menu-item-thumbnail-12.jpg', 1, '0000-00-00', '0000-00-00'),
 (13, 'Uramaki', '50K', 'Uramaki Sushi là phiên bản \"đảo ngược\" của Maki Sushi.', 2, 'menu-item-thumbnail-13.jpg', 1, '0000-00-00', '0000-00-00'),
@@ -181,7 +182,15 @@ CREATE TABLE `reservation` (
 INSERT INTO `reservation` (`id`, `name`, `email`, `phone`, `no_of_guest`, `date_res`, `time`, `occasion`, `kind`, `note`, `status`, `updated_at`, `created_at`) VALUES
 (1, 'Thành Đạt', 'thanhdat@gmail.com', '0123456789', '2', '17/01/2021', '12:16', 'Thường', 3, 'Đặt trước bánh ngọt', 1, '2021-01-18', '0000-00-00'),
 (2, 'Anh Đức', 'anhduc@gmail.com', '0123456789', '2', '17/01/2021', '12:16', 'Thường', 1, 'Đặt trước bánh ngọt', 0, '2021-01-18', '0000-00-00'),
-(3, 'Nguyễn Nhi', 'nhinhi@gmail.com', '01562354', '2', '24.01.2021', '2:32 PM', 'Không', 1, 'không', 0, '2021-01-23', '2021-01-23');
+(3, 'Nguyễn Nhi', 'nhinhi@gmail.com', '01562354', '2', '24.01.2021', '2:32 PM', 'Không', 1, 'không', 0, '2021-01-23', '2021-01-23'),
+(5, 'Minh Ngọc', 'ngocminhh@gmail.com', '5623151523', '2', '27.01.2021', '9:13 AM', 'Không', 1, 'Không', 0, '2021-01-26', '2021-01-26'),
+(6, 'Bình', 'nkijsubf@gmail.com', '0156422231', '7', '26.01.2021', '9:15 AM', 'Không', 3, 'Không', 0, '2021-01-26', '2021-01-26'),
+(7, 'Vy', 'vyvyvyvy@gmail.com', '0461532152', '2', '26.01.2021', '6:17 PM', 'Không', 1, 'Không', 0, '2021-01-26', '2021-01-26'),
+(8, 'Trí', 'minhtri@gmail.com', '0546256142', '2', '26.01.2021', '9:26 AM', 'Không', 1, 'Không', 0, '2021-01-26', '2021-01-26'),
+(9, 'Khôi Nguyên', 'khoinguyen@gmail.com', '1425664521', '4', '26.01.2021', '9:28 AM', 'Không', 2, 'Không', 0, '2021-01-26', '2021-01-26'),
+(10, 'hoàng hà', 'hoanghamobile@gmail.com', '1900209111', '2', '26.01.2021', '9:42 AM', 'Không', 1, 'Không', 0, '2021-01-26', '2021-01-26'),
+(11, 'Lê Nguyên', 'lenguye@gmail.com', '0125456123', '2', '26.01.2021', '9:58 AM', 'Không', 1, 'Không', 0, '2021-01-26', '2021-01-26'),
+(12, 'Vương Nguyên', 'hihinewbie99@gmail.com', '0971097399', '2', '25.03.2021', '8:38 PM', 'Không', 1, 'Không có ghi chú', 1, '2021-03-24', '2021-03-24');
 
 -- --------------------------------------------------------
 
@@ -223,7 +232,6 @@ CREATE TABLE `users` (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `remember_token` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -232,9 +240,10 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `updated_at`, `created_at`) VALUES
-(2, 'Bảo Thiên', 'baothien@gmail.com', '$2y$10$Ux.W2wFa2nwin471r0z3wOrQrVGdwJaEK5dxIrsMZmUENfxqA3nua', 'xUfXcgMu9yjXRMhUeeq8o7mqu65T2OFtuv36xZ99WjbJVbyPbXOfIAA3Rwo8', '2021-01-16', '0000-00-00'),
-(4, 'Anh Đức', 'anhduc@gmail.com', '$2y$10$u8v1pyMzQp8jlZGobKbxgOBLxIkg.Sp.06tpGoLNeBkwz6S7mK0r6', 'EfYTKdG5efAWZTigMeb2ihGVZxkvgu8B4FqtwKwCt2f41TrGd9Arud9djewk', '0000-00-00', '0000-00-00');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `updated_at`, `created_at`) VALUES
+(2, 'Bảo Thiên', 'baothien@gmail.com', '$2y$10$Ux.W2wFa2nwin471r0z3wOrQrVGdwJaEK5dxIrsMZmUENfxqA3nua', '2021-01-16', '0000-00-00'),
+(4, 'Anh Đức', 'anhduc@gmail.com', '$2y$10$u8v1pyMzQp8jlZGobKbxgOBLxIkg.Sp.06tpGoLNeBkwz6S7mK0r6', '0000-00-00', '0000-00-00'),
+(5, 'Thành Đạt', 'thanhdat@gmail.com', '$2y$10$oiiCYI4NcQx83kfhSUZ5A.H0raUiVRYpY2V2MD0U67OEC.Uen0TAm', '2021-01-25', '2021-01-25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -292,19 +301,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `kinds`
@@ -316,7 +325,7 @@ ALTER TABLE `kinds`
 -- AUTO_INCREMENT cho bảng `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `slide`
@@ -328,7 +337,7 @@ ALTER TABLE `slide`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

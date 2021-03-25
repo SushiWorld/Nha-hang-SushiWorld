@@ -89,6 +89,7 @@
                             </div>
                             <button type="submit" class="btn btn-default" >Sửa</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
+                            <button><a href="admin/food/list"> Quay lại</a></button>
                         <form>
                     </div>
                 </div>

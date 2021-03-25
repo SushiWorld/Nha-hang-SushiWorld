@@ -72,6 +72,7 @@
                             </div>
                             <button type="submit" class="btn btn-default">Cập nhập</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
+                            <button><a href="admin/contact/list"> Quay lại</a></button>
                         <form>
                     </div>
                 </div>
